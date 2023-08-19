@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles">
+    <script src="script"></script>
+    <title>Admin Page</title>
+</head>
+<body onload="addRowAdmin(10)" >
+<div id="mainAdmin" class="tables">
+    <form>
+        <div id="workSpaceAdmin">
+            <div id="tables">
+                <table>
+                    <tr class="space">
+                        <td>
+                            <label>Mileage Rate: </label>
+
+                        </td>
+                        <td>
+                            <input type="number" min="0" id="mileageRate">
+
+                        </td>
+                    </tr>
+                    <tr class="space">
+                        <td>
+                            <label>Daily allowance: </label>
+
+                        </td>
+                        <td>
+                            <input type="number" min="0" id="dailyAllowance">
+                        </td>
+                    </tr>
+
+                </table>
+                <table id="tab">
+                    <tr>
+                        <th>Receipt Type:</th>
+                        <th>Daily limit:</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <input type="button" onClick="addRowAdmin(10)" value="Add type  " id="addButton"/>
+
+        </div>
+        <div id="footer">
+            <div id="messageBox">
+                <h2 id="message"></h2>
+            </div>
+            <input type="button" value="Submit changes" id="confirmButton" onClick="sendAdminUpdate()">
+        </div>
+    </form>
+
+</div>
+</body>
+
+
+</html>

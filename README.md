@@ -8,7 +8,7 @@ To build this project:
 - Type "mvn clean install"
 - Click Enter
   
-##Run
+## Run
 To run this project:
 - Go to Reimbursement/target
 - Copy the name of file with .jar extention
@@ -17,7 +17,7 @@ To run this project:
 - Type "java -cp jarfilename.jar org.example.Main"
 - Click Enter
 
-##Test
+## Test
 To test this application:
 - Whie the Reimbursement app is running:
   - Open project from repository from another link (https://github.com/Sobieski69/ReimbursementTest) in IntelliJ Idea

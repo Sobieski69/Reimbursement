@@ -1,5 +1,5 @@
 # Reimbursement
-##Build
+## Build
 To build this project:
 - install maven and add it to the path
 - Open project directory

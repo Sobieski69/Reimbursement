@@ -75,11 +75,22 @@ function createJsonClient() {
   let selectValues = [];
   let selectTypes = [];
 
+        var hasDuplicate;
+        var duplicateIndex;
   for (var i = 1; i < iCnt; i++) {
+      hasDuplicate = false;
       var selectValueSource = document.getElementById("selectValue" + i).value;
       var receiptTypeSource = document.getElementById("select" + i).value;
+      for(var j=0; j<selectValues.length; j++){
+        if(receiptTypeSource === selectTypes[j]){
+            duplicateIndex = j;
+            console.log(j);
+            hasDuplicate = true;
+            selectValues[j] = parseInt(selectValueSource) + parseInt(selectValues[j]);
+        }
+      }
 
-      if (selectValueSource == "") {
+      if (selectValueSource === "" || hasDuplicate === true) {
         continue;
       }else if(selectValueSource<0){
         printResponseMessage("errorMessage", "Value must be a positive number.");
@@ -215,7 +226,6 @@ function getDropdownList() {
   xhr1.send();
   var payload = xhr1.response;
   var payloadJson = JSON.parse(payload);
-  console.log(payloadJson.data);
   return payloadJson.data;
 }
 

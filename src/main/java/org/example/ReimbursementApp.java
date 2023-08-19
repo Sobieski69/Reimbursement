@@ -20,11 +20,8 @@ public class ReimbursementApp {
             System.out.println("Server is on.");
             while (true) {
                 try (Socket client = serverSocket.accept()) {
-                    System.out.println("new message: " + client.toString());
                     br = getBufferedReader(client);
-
                     String firstLine = getRequestFirstLine(client);
-
                     if (readRequestVerb(firstLine).equals("POST") && readResourceLocator(firstLine).equals("/data")) {
                         try {
                             String requestPayload = getClientRequestPayload(br);

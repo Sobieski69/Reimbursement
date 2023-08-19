@@ -28,7 +28,6 @@ public class RequestHandler {
     public String handleClientClaimPostRequestPayload(Socket client, String requestPayload, ClaimParams claimParams) {
         try {
             String id = addUserJsonToDataStore(context.dataStore, jsonToPojo(requestPayload));
-            System.out.println(id);
             String responsePayload = createResponse("clientSuccess",
                     calculateReimbursement(context, id, claimParams));
             sendClientResponse(client, responsePayload);
@@ -178,7 +177,6 @@ public class RequestHandler {
         try {
             OutputStream clientOutput = client.getOutputStream();
             clientOutput.write(("HTTP/1.1 200 OK\r\n").getBytes());
-            clientOutput.write(("Content-Type: application/json\n").getBytes());
             clientOutput.write(("\r\n").getBytes());
             clientOutput.write(FileUtil.readFromFile(fileType).getBytes());
             clientOutput.flush();

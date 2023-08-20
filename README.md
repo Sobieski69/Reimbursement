@@ -16,6 +16,7 @@ To run this project:
 - Click "open PowerShell window here option"
 - Type "java -cp jarfilename.jar org.example.Main"
 - Click Enter
+- In browser open localhost:8080 for client page and localhost:8080/admin for admin page
 
 ## Test
 To test this application:
